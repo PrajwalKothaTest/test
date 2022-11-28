@@ -25,15 +25,21 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>3.7.1</version>
+				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
@@ -45,7 +51,7 @@
 						<workers>${workers}</workers>
 						<workerType>${workerType}</workerType>
 						<objectStoreV2>true</objectStoreV2>
-						<connectedAppClientId> ${connectedApp.ClientId}   </connectedAppClientId>
+						<connectedAppClientId> ${connectedApp.ClientId}</connectedAppClientId>
 						<connectedAppClientSecret>${connectedApp.ClientSecret}</connectedAppClientSecret>
 						<connectedAppGrantType> ${connectedApp.GrantType}  </connectedAppGrantType>
 						<properties>
