@@ -46,6 +46,7 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>${url}</uri>
+						<org>66fe4545-8f06-4b2c-8320-81e9bdea78d2</org>
 						<muleVersion>${app.runtime}</muleVersion>
 						<applicationName>${project.artifactId}-${env}</applicationName>
 						<environment>${env}</environment>
